@@ -2,12 +2,6 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Home</title>
-	<link rel="stylesheet" href="Styles/Style.css">
-	<script src="Styles/Script.js"></script>
-</head>
-
-<body>
 <style>
 @charset "utf-8";
 /* CSS Document */
@@ -163,6 +157,12 @@ li a:hover {
 }
 
 </style>
+<title>Home</title>
+	<link rel="stylesheet" href="Styles/Style.css">
+	<script src="Styles/Script.js"></script>
+</head>
+
+<body>
 	<ul>
 		<li><a class="activee" href="index.html">Home</a></li>
 		<li><a href="Apex.html">Apex Legends</a></li>
@@ -219,4 +219,34 @@ li a:hover {
 	
 	
 </body>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
 </html>
