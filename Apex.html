@@ -2,6 +2,93 @@
 <html>
 <head>
 <meta charset="utf-8">
+<style>
+@charset "utf-8";
+/* CSS Document */
+body
+{
+	background-color: black;
+}
+P
+{
+	color: white;
+	text-align: center;
+	font-size: 26px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightpink;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+	font-size: 26px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: red;
+}
+.active {
+  background-color:lightcoral;
+}
+
+source
+{
+	align-content: center;
+}
+video 
+{
+  width: 50%;
+  height:auto;
+	margin-right: 50%;
+	margin-left: 25%;
+	 border-style: ridge;
+  border-color: white;
+  border-radius: 20px;
+}
+
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+img
+{
+	 border-style: ridge;
+  border-color: white;
+  border-radius: 20px;
+
+}
+.center
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+</style>
+
 <title>Apex</title>
 	<link rel="stylesheet" href="Styles/SubStyle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,4 +110,34 @@
 	<p>The squads then must scavenge for weapons and other resources to fight other squads, during which the play area gradually constricts in size until one squad remains, thus ending the match. The game also features care packages and the ability to revive your teammates within a certain amount of time. Communication with team members can be done through voice chat or through a ping system, allowing teammates to mark supplies, locations, and enemies with ease.</p>
 	<img class="center" src="Resource/ApexMap.jpg" alt="Apex Map">
 </body>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
 </html>
